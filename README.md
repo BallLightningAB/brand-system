@@ -1,42 +1,43 @@
 # Brand System (Shared)
 
-This repo contains the shared “brand system” for the Ball Lightning AB ecosystem:
-- Ball Lightning (balllightning.cloud)
-- The Builder Coil (thebuildercoil.com)
-- Chronomation (chronomation.com)
+Shared “brand system” specs for the Ball Lightning AB ecosystem:
 
-It is intentionally framework-agnostic and written as specs (YAML) so each site/app can implement it in its own codebase.
+- Ball Lightning
+- The Builder Coil
+- Chronomation
+
+This repo is intentionally framework-agnostic. It documents design foundations, token contracts, UI conventions, and cross-brand policies so the structure/patterns can be reused across codebases.
 
 ## What lives here
-- Shared design foundation (backgrounds, neutrals, typography contracts)
-- Per-brand palettes + semantic tokens (accent1, accent2, gradient, tag styles)
-- Shared component conventions (ShadCN theme expectations, button/card/nav behaviors)
-- Cross-brand policies (newsletter canonical ownership, syndication rules)
+- Shared design foundation (neutrals, typography contracts, layout conventions)
+- Per-brand palettes + semantic token mapping (accent1, accent2, gradients, tag styles)
+- Component conventions (card/button/nav behaviors, accessibility baseline)
+- Cross-brand policies (newsletter ownership, content syndication rules)
 
 ## What does NOT live here
-- Site information architecture, page copy, routing
-- Product-specific requirements for Chronomation, TBC, or Ball Lightning
-- Secrets or operational credentials
+- Site routing/IA, page copy, product requirements
+- Secrets, credentials, or operational values
 
 ## Files
-- `pdd-brands-shared.yaml` — source of truth for shared rules (active baseline + optional overlays)
-- `optional-visual-refresh.yaml` — optional overlay proposal (may contradict baseline; opt-in only)
+- `pdd-brands-shared.yaml` — baseline rules + clearly marked optional overlays
+- `optional-visual-refresh.yaml` — optional visual overlay proposal (opt-in)
 
 ## How to consume from another repo
-Pin to a commit SHA for deterministic builds.
+Pin to a commit SHA for deterministic builds:
 
-Example reference format:
-- `https://github.com/<org>/<repo>/blob/<SHA>/pdd-brands-shared.yaml`
+- `https://github.com/BallLightningAB/brand-system/blob/<SHA>/pdd-brands-shared.yaml`
 
 Recommended workflow:
-1. Propose changes here via PR (even if self-merged).
+1. Change this repo via PR (even if self-merged).
 2. Merge → new SHA.
-3. Update downstream repos to pin the new SHA.
+3. Update downstream repos to the new pinned SHA.
 
 ## Newsletter policy (important)
-The newsletter (“The Upkeep”) is canonical on **The Builder Coil** only.
-Other brand sites (e.g. Ball Lightning) must not store subscriber PII or run their own list.
-They may only link/CTA to thebuildercoil.com for signup.
+“The Upkeep” is canonical on **The Builder Coil** only.
+
+Other brand sites (e.g. Ball Lightning) must not store subscriber PII or maintain a separate list.
+They may only link/CTA to The Builder Coil for signup.
 
 ## License
-MIT — see `LICENSE`.
+- Code/specs: Apache-2.0 — see `LICENSE`
+- Brand identifiers and brand assets: restricted — see `TRADEMARKS.md` and `brand-assets/README.md`
