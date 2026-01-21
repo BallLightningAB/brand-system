@@ -1,0 +1,127 @@
+brand_system_pdd:
+  meta:
+    name: "Ball Lightning AB — Shared PDD"
+    code_name: "shared-pdd"
+    version: "0.1"
+    repo: "https://github.com/BallLightningAB/brand-system"
+    purpose: >-
+      This document is the Product Definition Document (PDD) for the shared brand system.
+      It's used in conjunction with the project-specific PDDs, the https://github.com/BallLightningAB/brand-system/shared-architecture.yaml
+      and the https://github.com/BallLightningAB/brand-system/shared-design-system.yaml documents
+      that define the shared architecture, system policies and design system.
+    workflow_guide: "specs/memory-bank/memory-bank-usage.yaml"
+    owner:
+      individual: "Nicolas Brulay"
+      company: "Ball Lightning AB"
+    ecosystem:
+      chronomation:
+        kind: "product_saas"
+        description: "Multi-tenant backend + admin + marketing site for activity → narrative content and social sharing."
+        domain: "https://chronomation.com"
+        github_project: "https://github.com/users/BallLightningAB/projects/4"
+      thebuildercoil:
+        kind: "publication_devlog"
+        description: "First Chronomation tenant; public builder’s log for Ball Lightning AB."
+        domain: "https://thebuildercoil.com"
+        github_project: "https://github.com/users/BallLightningAB/projects/6"
+      balllightning:
+        kind: "company"
+        description: "Primary company site for Ball Lightning AB (consulting, booking, etc.)."
+        domain: "https://balllightning.cloud"
+        github_project: "https://github.com/users/BallLightningAB/projects/7"
+    repos:
+      chronomation: "https://github.com/BallLightningAB/chronomation, private repo – Chronomation backend + admin + marketing"
+      thebuildercoil: "https://github.com/BallLightningAB/thebuildercoil, public repo – TBC frontend, consuming Chronomation API"
+      balllightning: "https://github.com/BallLightningAB/balllightning, public repo – Ball Lightning sales + portfolio site"
+  product:
+    vision: |
+      Chronomation is a multi-tenant content engine that turns raw work artifacts
+      (commits, notes, emails, etc.) into structured blog posts and social content
+      for SMBs, creators, and influencers.
+      It will likely also host separate small add-on modules for features like signing a pdf, managing files, etc.
+
+      The Builder Coil (TBC) is the first tenant and public case study: a builder’s
+      log for Ball Lightning AB, powered entirely by Chronomation’s API.
+
+      Ball Lightning AB is the company behind the product Chronomation and the brand The Builder Coil, offering consulting and services connected to IT, mainly in the field of Project Management and Web Development.
+
+    primary_objectives:
+      chronomation:
+        - Multi-tenant data model: tenants, channels, projects, feed items, posts, social channels.
+        - Activity ingestion:
+          - GitHub (changelog/commits via Actions)
+          - Email (Resend inbound webhooks)
+          - Manual notes (admin UI)
+        - Narrative generation:
+          - Daily or ad-hoc posts per tenant + channel.
+          - Retroactive posts from historical activity.
+        - Admin UI:
+          - Tenant-aware dashboard for projects, feed, posts, social, and settings.
+        - Public API:
+          - Read-only endpoints for posts and feeds per tenant/channel.
+      balllightning:
+        in_scope:
+          - Be linked from Chronomation.com as the company behind the product.
+          - Showcase services for sale and portfolio.
+        out_of_scope_for_now:
+          - Use Chronomation feeds to show latest TBC posts.
+          - Own booking and calendar (Cal.com).
+
+    secondary_objectives:
+      - Make features generic enough for other SMBs/influencers to adopt with minimal customization.
+      - Use TBC as the flagship case study and live dogfooding client.
+
+    non_goals_for_now:
+      - Full-blown SaaS self-service signup, billing, and plan management.
+      - Arbitrary workflow automation beyond content and sharing.
+      - Public user accounts/comments.
+
+  personas:
+    - id: "tenant_owner_balllightning"
+      name: "Nicolas – Ball Lightning"
+      role: "Tenant owner / admin"
+      goals:
+        - Plug Ball Lightning’s repos, notes, and email into Chronomation.
+        - Use TBC as the main builder/devlog surface.
+        - Reuse the same content on balllightning if useful.
+    - id: "tenant_owner_smb_creator"
+      name: "Future SMB / influencer"
+      role: "External Chronomation customer"
+      goals:
+        - Ship a blog/content hub quickly using a template like TBC.
+        - Automate as much of content generation and sharing as possible.
+    - id: "public_visitor_tbc"
+      role: "Visitor of The Builder Coil"
+      goals:
+        - Read current builder posts and key milestones.
+        - Discover Chronomation and Ball Lightning.
+        - Reach out via a simple contact form.
+
+  scope:
+    in_scope_mvp:
+      chronomation:
+        - Multi-tenant data model: tenants, channels, projects, feed items, posts, social channels.
+        - Tenant-aware ingestion APIs (GitHub, email, manual).
+        - Tenant-aware daily post generation.
+        - Admin UI at chronomation.com.
+        - Tenant-scoped dashboard for Ball Lightning (first tenant).
+        - Public read APIs for feeds (JSON + RSS).
+
+    later_phases:
+      - Chronomation.com:
+        - richer marketing site
+        - case study section linking to TBC and balllightning
+      - Social auto-posting from Chronomation:
+        - X/LinkedIn integration when safe and stable.
+      - Multi-tenant billing and tiered features via Polar.
+
+  references:
+    architecture: "shared-architecture.yaml#architecture"
+    techstack: "shared-architecture.yaml#architecture.techstack"
+    media_hosting_strategy: "shared-architecture.yaml#architecture.media_hosting_strategy"
+    video_strategy: "shared-architecture.yaml#architecture.video_strategy"
+    non_functional_and_operational: "shared-architecture.yaml#architecture.non_functional_and_operational"
+    data_model: "shared-architecture.yaml#architecture.data_model"
+    routes: "shared-architecture.yaml#architecture.routes"
+    env: "shared-architecture.yaml#architecture.env"
+    implementation_plan: "shared-architecture.yaml#architecture.implementation_plan"

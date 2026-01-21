@@ -1,0 +1,248 @@
+brand_system:
+  meta:
+    name: "Ball Lightning AB — Shared Brand System"
+    code_name: "shared-design-system"
+    version: "0.1"
+    repo: "https://github.com/BallLightningAB/brand-system"
+    purpose: >-
+      Shared design + cross-brand policies for Ball Lightning, The Builder Coil, and Chronomation.
+      Open patterns; protected trademarks/assets.
+      It's used in conjunction with the project-specific PDDs, the https://github.com/BallLightningAB/brand-system/shared-pdd.yaml and
+      the https://github.com/BallLightningAB/brand-system/shared-architecture.yaml documents
+      that define the shared architecture, system policies and design system.
+
+  precedence:
+    baseline: "This file is the baseline."
+    overlays:
+      optional_visual_refresh:
+        file: "optional-visual-refresh.yaml"
+        status: "optional"
+        rule: >-
+          Overlay is opt-in per project. If it contradicts baseline, baseline wins unless explicitly enabled.
+
+  cross_brand_policies:
+    newsletter:
+      name: "The Upkeep"
+      canonical_home: "The Builder Coil"
+      rules:
+        - "Only The Builder Coil owns signup + subscriber storage."
+        - "Ball Lightning must not store subscriber PII or maintain its own list."
+        - "Ball Lightning may show a CTA that links to TBC signup."
+    content_syndication:
+      rules:
+        - "Canonical blog/news publishing lives on The Builder Coil."
+        - "Other sites may embed preview cards (teasers) that link to canonical TBC URLs."
+        - "Avoid full-content duplication to reduce SEO cannibalization."
+      freshness:
+        preferred: "Public feed/endpoint from TBC (implementation up to consuming repos)."
+
+  design:
+    shared:
+      typography:
+        primary:
+          family: "Big Shoulders Variable"
+          css_var: "--font-primary"
+          stack: '"Big Shoulders", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+          axes:
+            wght: "100..900"
+        alternatives:
+          montserrat_lora:
+            sans_stack: "Montserrat, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+            serif_stack: "Lora, 'Times New Roman', ui-serif, Georgia, serif"
+            mono_stack: "'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+            usage:
+              headings: "Lora for H1–H2 (tome / grimoire feeling), Montserrat for H3+"
+              body: "Montserrat for paragraphs, lists, UI copy"
+              code: "JetBrains Mono for code, IDs, commit snippets"
+        weights:
+          title: 900   # page/brand titles
+          h1: 700
+          h2: 500
+          h3: 500
+          body: 400
+          ui: 400
+        casing:
+          headings: "optional uppercase (recommended for Big Shoulders look)"
+          body: "sentence case"
+        base:
+          html_font_size_px: 16
+          body:
+            size_rem: 1.0
+            line_height: 1.5
+            max_width_ch: 70
+        scale:
+          ratio: 1.25
+          note: "Use the existing 1.25 scale from optional-visual-refresh as reference."
+        code_blocks:
+          recommended_exception:
+            note: "Keep monospace for code blocks for readability (even if brand copy is Big Shoulders)."
+            mono_stack: '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+        backgrounds:
+          dark_base: "#05070A"
+          dark_elevated: "#0A1014"
+          dark_subtle: "#111827"
+          light_base: "#F5E6D3"
+          light_elevated: "#F9F3E8"
+        shared_colors:
+          cream_main: "#F5E6D3"
+          cream_soft: "#F9F3E8"
+          dark_ink: "#111827"
+          light_ink: "#F9FAFB"
+          body_on_dark: "#E5E7EB"
+          muted_on_dark: "#9CA3AF"
+
+    brands:
+      thebuildercoil:
+        description: >
+          Arcane engineering / builder’s grimoire. Dark void background with cream
+          ink and selective teal/violet energy as accents. Feels like a spellbook
+          for modern dev work, but still readable and practical.
+        scheme:
+          dark:
+            background:
+              base: "#05070A"
+              elevated: "#0A1014"
+              subtle: "#111827"
+            foreground:
+              body: "#E5E7EB"
+              muted: "#9CA3AF"
+              heading_cream: "#F5E6D3"   # H1/H2, key labels, nav brand text
+            logo:
+              ink: "#F5E6D3"             # circle, coil, book in dark mode
+            surfaces:
+              card_default: "#0A1014"
+              card_border_cream: "#F5E6D3"
+              tag_bg_cream_soft: "rgba(245,230,211,0.06)"
+              tag_text_cream: "#F5E6D3"
+            primaries:
+              teal: "#23F0FF"            # electric teal highlights
+              teal_hover: "#4FF6FF"
+              teal_soft: "rgba(35,240,255,0.18)"
+              violet: "#8B5CFF"          # arcane violet accents
+              violet_hover: "#A78BFA"
+              violet_soft: "rgba(139,92,255,0.16)"
+            accent:
+              ember: "#FFDCA8"           # warm highlight tying into cream
+              success: "#4ADE80"
+              warning: "#FBBF24"
+              danger: "#F97373"
+            neutrals:
+              border_subtle: "rgba(148,163,184,0.35)"
+              border_strong: "rgba(148,163,184,0.6)"
+          light:
+            background:
+              base: "#F5E6D3"            # cream base
+              elevated: "#F9F3E8"
+            foreground:
+              primary: "#111827"
+              muted: "#4B5563"
+              heading_ink: "#111827"
+            logo:
+              ink: "#111827"             # circle, coil, book in light mode
+            primaries:
+              teal: "#23F0FF"
+              violet: "#8B5CFF"
+            accent:
+              ember: "#C05621"           # slightly darker ember for text/icons
+              success: "#15803D"
+              warning: "#B45309"
+              danger: "#B91C1C"
+
+      chronomation:
+        description: >
+          Automation engine / control center. Same void/cream foundations, but
+          calmer teal/blue accents and a more utilitarian SaaS feel. Feels like a
+          reliable control room for orchestrating workflows behind the scenes.
+        scheme:
+          dark:
+            background:
+              base: "#05070A"
+              elevated: "#0A1014"
+              subtle: "#111827"
+            foreground:
+              body: "#E5E7EB"
+              muted: "#9CA3AF"
+              heading_cream: "#F5E6D3"   # headings, key status labels
+            logo:
+              ink: "#F5E6D3"             # Chronomation mark on dark
+            surfaces:
+              card_default: "#0A1014"
+              card_border_cream: "#F5E6D3"
+              tag_bg_cream_soft: "rgba(245,230,211,0.06)"
+            primaries:
+              teal: "#12B8C4"            # calmer teal than TBC
+              teal_hover: "#22D3EE"
+              teal_soft: "rgba(34,211,238,0.18)"
+              sky: "#38BDF8"
+              sky_hover: "#60A5FA"
+            accent:
+              action: "#FACC15"          # sharp yellow CTAs
+              success: "#22C55E"
+              warning: "#EAB308"
+              danger: "#F97373"
+            neutrals:
+              border_subtle: "rgba(148,163,184,0.30)"
+              border_strong: "rgba(148,163,184,0.55)"
+          light:
+            background:
+              base: "#F5E6D3"
+              elevated: "#F9F3E8"
+            foreground:
+              primary: "#111827"
+              muted: "#4B5563"
+            logo:
+              ink: "#111827"
+            primaries:
+              teal: "#12B8C4"
+              sky: "#38BDF8"
+
+      balllightning:
+        description: >
+          Parent brand. Shares the same dark/cream foundations but switches to
+          molten red/orange energy with a slightly more aggressive, playful feel.
+          Represents the studio behind Chronomation and The Builder Coil.
+        scheme:
+          dark:
+            background:
+              base: "#05070A"
+              elevated: "#0A1014"
+              subtle: "#111827"
+            foreground:
+              body: "#E5E7EB"
+              muted: "#9CA3AF"
+              heading_cream: "#F5E6D3"   # headings and key brand marks
+            logo:
+              ink: "#F5E6D3"             # BL wordmark / icon on dark
+            surfaces:
+              card_default: "#0A1014"
+              card_border_cream: "#F5E6D3"
+              tag_bg_cream_soft: "rgba(245,230,211,0.06)"
+            primaries:
+              deep_molten: "#9C1B12"
+              mid_red: "#DD3A28"
+            accent:
+              warm_rose: "#FF7268"
+              pale_ember: "#FFD4C9"
+            neutrals:
+              surface: "#1B181C"
+              soft_light: "#E8E5E6"
+          light:
+            background:
+              base: "#F5E6D3"
+              elevated: "#F9F3E8"
+            foreground:
+              primary: "#111827"
+              muted: "#4B5563"
+            logo:
+              ink: "#111827"
+            primaries:
+              deep_molten: "#9C1B12"
+              mid_red: "#DD3A28"
+            accent:
+              warm_rose: "#FF7268"
+              pale_ember: "#FFD4C9"
+
+        relationship_notes:
+          - "Chronomation and TBC share the same typography and core component language as Ball Lightning."
+          - "TBC leans into teal/violet arcane; Chronomation leans into teal/blue lab; Ball Lightning leans into molten red/orange."
+          - "It should feel like one universe: same fonts and component shapes, different color temperatures and attitude."
