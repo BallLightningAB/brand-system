@@ -1,8 +1,8 @@
-brand_system_pdd:
+ecosystem_pdd:
   meta:
-    name: "Ball Lightning AB — Shared PDD"
-    code_name: "shared-pdd"
-    version: "0.1"
+    name: "Ball Lightning AB — Shared Ecosystem PDD"
+    code_name: "shared-ecosystem-pdd"
+    version: "0.1.1"
     repo: "https://github.com/BallLightningAB/brand-system"
     purpose: >-
       This document is the Product Definition Document (PDD) for the shared brand system.

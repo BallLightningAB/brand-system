@@ -1,0 +1,18 @@
+entries:
+  - date: "2026-01-21"
+    version: 0.1.1
+    issue: "refactor"
+    commit: TBD
+    status: released
+    title: "docs: Restructure brand system documentation into modular files"
+    details: |-
+      - Split monolithic brand-system.yaml into shared-design-system.yaml, shared-architecture.yaml, shared-ecosystem-pdd.yaml.
+      - Updated README with system overview, cross-file reference format, and PDD vs Architecture guide.
+      - Moved thebuildercoil-pdd.yaml back to its repo and removed obsolete files.
+  - date: "2026-01-21"
+    version: 0.1
+    issue: "init"
+    commit: 678a64b0f9160a358f15cbf02044a2b545654646
+    status: pending
+    title: "feat(init): added brand system repo, license and README"
+    details: |-

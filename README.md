@@ -24,7 +24,7 @@ Shared documents live in this repo. Project-specific PDDs live in their own prod
 ## Files
 - `shared-design-system.yaml` — shared design + cross-brand policies
 - `shared-architecture.yaml` — shared architecture + policy references (email, hosting, integrations)
-- `shared-pdd.yaml` — shared PDD across brands
+- `shared-ecosystem-pdd.yaml` — shared PDD across brands
 - `optional-visual-refresh.yaml` — optional visual overlay proposal (opt-in)
 
 ## Project-specific PDDs (live in product repos)
@@ -37,10 +37,10 @@ Use dot-delimited paths after a `#` to point at a YAML section.
 
 Example:
 - `shared-architecture.yaml#architecture.techstack.thebuildercoil`
-- `shared-pdd.yaml#meta.ecosystem`
+- `shared-ecosystem-pdd.yaml#meta.ecosystem`
 
 ## PDD vs Architecture decision guide
-- **PDD (shared-pdd.yaml)**: Why, who, what.
+- **PDD (shared-ecosystem-pdd.yaml)**: Why, who, what.
   - Vision, objectives, personas, scope.
   - Product/brand definitions.
   - References to architecture/design.
@@ -57,7 +57,7 @@ Pin to a commit SHA for deterministic builds:
 
 - `https://github.com/BallLightningAB/brand-system/blob/<SHA>/shared-design-system.yaml`
 - `https://github.com/BallLightningAB/brand-system/blob/<SHA>/shared-architecture.yaml`
-- `https://github.com/BallLightningAB/brand-system/blob/<SHA>/shared-pdd.yaml`
+- `https://github.com/BallLightningAB/brand-system/blob/<SHA>/shared-ecosystem-pdd.yaml`
 
 Recommended workflow:
 1. Change this repo via PR (even if self-merged).

@@ -7,7 +7,7 @@ brand_system:
     purpose: >-
       Shared design + cross-brand policies for Ball Lightning, The Builder Coil, and Chronomation.
       Open patterns; protected trademarks/assets.
-      It's used in conjunction with the project-specific PDDs, the https://github.com/BallLightningAB/brand-system/shared-pdd.yaml and
+      It's used in conjunction with the project-specific PDDs, the https://github.com/BallLightningAB/brand-system/shared-ecosystem-pdd.yaml and
       the https://github.com/BallLightningAB/brand-system/shared-architecture.yaml documents
       that define the shared architecture, system policies and design system.
 

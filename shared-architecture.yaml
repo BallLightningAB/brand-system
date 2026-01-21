@@ -6,7 +6,7 @@ brand_system_architecture:
     repo: "https://github.com/BallLightningAB/brand-system"
     purpose: >-
       Shared architecture/policies that apply across Ball Lightning, The Builder Coil, and Chronomation.
-      It's used in conjunction with the project-specific PDDs, the https://github.com/BallLightningAB/brand-system/shared-pdd.yaml
+      It's used in conjunction with the project-specific PDDs, the https://github.com/BallLightningAB/brand-system/shared-ecosystem-pdd.yaml
       and the https://github.com/BallLightningAB/brand-system/shared-design-system.yaml documents
       that define the shared architecture, system policies and design system.
 
