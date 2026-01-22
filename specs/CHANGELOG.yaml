@@ -1,4 +1,17 @@
 entries:
+  - date: "2026-01-22"
+    version: 0.1.2
+    issue: "refactor"
+    commit: TBD
+    status: released
+    title: "refactor: Centralize shared design tokens and eliminate duplication"
+    details: |-
+      - Moved tailwind typography mappings from optional-visual-refresh to shared-design-system.yaml.
+      - Refactored optional-visual-refresh.yaml to reference shared-design-system.yaml instead of duplicating content.
+      - Ensured brands section references color_schemes from shared design system.
+      - Removed redundant usage notes to prevent drift between files.
+      - Reviewed shared-design-system.yaml for consistency across all three brands.
+      - Moved optional-visual-refresh.yaml back to thebuildercoil repo as clean implementation candidate.
   - date: "2026-01-21"
     version: 0.1.1
     issue: "refactor"
