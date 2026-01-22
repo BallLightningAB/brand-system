@@ -2,7 +2,7 @@ entries:
   - date: "2026-01-22"
     version: 0.1.2
     issue: "refactor"
-    commit: TBD
+    commit: 308b6571a122fc6217cbf367a161da0ba337a318
     status: released
     title: "refactor: Centralize shared design tokens and eliminate duplication"
     details: |-
